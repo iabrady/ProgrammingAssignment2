@@ -1,6 +1,7 @@
-## makeCacheMatrix that takes a matrix as its arguement and does the following:
-##  1. It returns a list of stored functions created here
-##  2. it caches the maxtrix to be inverted
+## makeCacheMatrix is a function that takes a matrix as its arguement 
+## and does the following:
+##  1. It returns a list of stored functions that have been created here
+##  2. it caches the input maxtrix to be inverted
 
 makeCacheMatrix <- function(x = matrix()) {
         ## validate we have the right type of data input
@@ -18,7 +19,7 @@ makeCacheMatrix <- function(x = matrix()) {
     }
         ## create the function to return the cached matrix
     getmx <- function() x
-        ## create tje function to set the stored inverted matrix
+        ## create the function to set the stored inverted matrix
     setinv <- function(solve) mxinv <<- solve
         ## create hte function to retrieve the inverted matrix
     getinv <- function() mxinv
@@ -30,7 +31,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## cacheSolve takes the list of functions constructed in makeCacheMatrix
-## and executes them to either:
+## and the cached input matrix and executes them to either:
 ##      1. return the existing cached inverse matrix if it already exists OR 
 ##      2. calculate, set in cache and return, the inverse matrix of the matrix 
 ##         that was put in cach by makeCacheMatrix 
